@@ -1,21 +1,21 @@
 from rest_framework import serializers
-from .models import User
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'email', 'role', 'password', 'bio', 'profile_picture']
+        fields = ['id', 'username', 'email', 'password', 'profile_picture', 'role']
         extra_kwargs = {
             'password': {'write_only': True},
-            'role': {'read_only': True}
+            'email': {'required': True, 'allow_blank': False}
         }
 
     def create(self, validated_data):
-        password = validated_data.pop('password')
-        user = User.objects.create_user(password=password, **validated_data)
+        user = User.objects.create_user(**validated_data)
         return user
 
-# পাসওয়ার্ড পরিবর্তনের জন্য নতুন সিরিয়ালাইজার
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)

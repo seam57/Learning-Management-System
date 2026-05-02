@@ -2,7 +2,6 @@ import os
 from pathlib import Path
 from datetime import timedelta
 
-# ১. BASE_DIR সবার ওপরে থাকতে হবে
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-lms-project-test-key-2026'
@@ -11,7 +10,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -20,12 +18,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 3rd Party Apps
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
 
-    # Local Apps
     'accounts',
     'courses',
 ]
@@ -61,7 +57,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-# Database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -73,7 +68,6 @@ AUTH_USER_MODEL = 'accounts.User'
 
 AUTH_PASSWORD_VALIDATORS = []
 
-# Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -81,11 +75,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# ২. মিডিয়া ফাইল কনফিগারেশন
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# DRF & JWT & CORS
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -103,3 +95,12 @@ SIMPLE_JWT = {
 
 CORS_ALLOW_ALL_ORIGINS = True 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email Configuration - Actual Gmail SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@gmail.com'  # আপনার জিমেইল ঠিকানা এখানে দিন
+EMAIL_HOST_PASSWORD = 'your-app-password' # আপনার ১৬ অক্ষরের গুগল অ্যাপ পাসওয়ার্ড এখানে দিন
+DEFAULT_FROM_EMAIL = 'EduNexus LMS <your-email@gmail.com>'
