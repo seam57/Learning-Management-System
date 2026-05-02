@@ -53,5 +53,13 @@ Navigate to the frontend folder: cd frontend
 Install npm packages: npm install
 
 Start the React app: npm start
+### Project Screenshot
+![LMS Login Page](./image_b12a5e.jpg)
+## 📸 Project Screenshots
 
-screenshot:https://docs.google.com/document/d/1z9OubR0dUB6NAhiyT7VrfWZoTv3HRu6-LzPBf495WVU/edit?tab=t.0
+### Login Page
+![LMS Login Page](https://raw.githubusercontent.com/seam57/Learning-Management-System/master/image_b12a5e.jpg)
+
+### Documentation Link
+[View Full Project Documentation on Google Docs](https://docs.google.com/document/d/1z9OubR0dUB6NAhiyT7VrfWZoTv3HRu6-LzPBf495WVU/edit?tab=t.0)
+
