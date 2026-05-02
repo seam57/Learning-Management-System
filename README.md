@@ -1,41 +1,35 @@
-Full Stack Learning Management System
-is a comprehensive digital learning platform designed to bridge the gap between instructors and students. Built with a robust Django backend and a dynamic React frontend, it provides a seamless educational experience.
 
-✨ Features
-Secure Authentication: Custom user roles (Student/Instructor) with JWT-based authentication.
 
-Password Recovery: Integrated "Forgot Password" feature with automated reset links sent via Gmail SMTP service.
+## ✨ Features
+*   **Secure Authentication**: Role-based access for Students and Instructors using JWT.
+*   **Password Recovery**: Integrated "Forgot Password" functionality with automated reset links sent via Gmail SMTP.
+*   **Course Management**: Instructors can easily create, update, and manage their courses.
+*   **Student Enrollment**: Seamless process for students to browse and enroll in academic courses.
+*   **Responsive Design**: Fully optimized for various devices using Bootstrap 5.
 
-Course Management: Instructors can create, update, and manage courses easily.
+---
 
-Student Enrollment: Simple process for students to enroll in and access learning materials.
+## 💻 Tech Stack
 
-User Profiles: Personalized profiles for managing data and viewing progress.
+### Backend
+*   **Framework**: Django & Django REST Framework (DRF)
+*   **Authentication**: Simple JWT (JSON Web Token)
+*   **Database**: SQLite3
+*   **Email Service**: Gmail SMTP
 
-Responsive UI: Fully optimized interface built with React and Bootstrap 5.
+### Frontend
+*   **Library**: React.js
+*   **Styling**: Bootstrap 5
+*   **API Client**: Axios
 
-💻 Tech Stack
-Backend
-Framework: Django & Django REST Framework (DRF)
+---
 
-Authentication: Simple JWT (JSON Web Token)
+## 🚀 Setup & Installation
 
-Database: SQLite3
-
-Email Service: Gmail SMTP
-
-Frontend
-Library: React.js
-
-Styling: Bootstrap 5
-
-API Client: Axios
-
-🚀 Setup & Installation
-1. Clone the Repository
-Bash
-git clone https://github.com/your-username/edunexus-lms.git
-cd edunexus-lms
+### 1. Clone the Repository
+```bash
+git clone https://github.com/seam57/Learning-Management-System.git
+cd Learning-Management-System
 2. Backend Setup
 Navigate to the backend folder: cd backend
 
@@ -59,15 +53,3 @@ Navigate to the frontend folder: cd frontend
 Install npm packages: npm install
 
 Start the React app: npm start
-
-🛠 Available Scripts (Frontend)
-In the frontend directory, you can run:
-
-npm start
-Runs the app in development mode at http://localhost:3000.
-
-npm test
-Launches the test runner in interactive watch mode.
-
-npm run build
-Builds the app for production to the build folder.
